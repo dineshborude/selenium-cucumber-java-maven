@@ -6,11 +6,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BrowserSetup {
 
+    public static WebDriver driver;
+
     public static void main(String[] args) {
 
         WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://www.selenium.dev/");
+        driver = new ChromeDriver();
+        driver.get("https://anupdamoda.github.io/AceOnlineShoePortal/index.html");
 
 
     }
