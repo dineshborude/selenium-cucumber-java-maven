@@ -8,14 +8,13 @@ public class BrowserSetup {
 
     public static WebDriver driver;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        driver.get("https://anupdamoda.github.io/AceOnlineShoePortal/index.html");
+//        driver.get("https://anupdamoda.github.io/AceOnlineShoePortal/index.html");
+
 
 
     }
-
-
 }
