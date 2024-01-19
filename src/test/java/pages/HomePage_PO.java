@@ -17,7 +17,7 @@ public class HomePage_PO extends BrowserSetup {
     private WebElement hamburgerMenu = driver.findElement(xpath(""));
     private List<WebElement> menuList = driver.findElements(By.xpath("//ul[@id='menu']/a/li"));
 
-    private WebElement signInButton = driver.findElement(By.xpath("//*[@id=\"menu\"]/a[2]/li"));
+    private WebElement signInButton = driver.findElement(By.xpath("//input[@type='submit']"));
 
     public void clickHamburger(){
         hamburgerMenu.click();

@@ -17,15 +17,17 @@ public class LoginPage {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
 
+
         System.out.println("Given Block");
     }
 
-    @When(": User successfully enters the login details.")
-    public void user_successfully_enters_the_login_details() {
+    @When(": User enters (.*) and (.*)")
+    public void user_successfully_enters_the_login_details(String username, String password) {
         System.out.println("When Block");
         driver.navigate().to("https://anupdamoda.github.io/AceOnlineShoePortal/SignIn.html");
-        driver.findElement(By.xpath("//input[@id='usr']")).sendKeys("Danny");
-        driver.findElement(By.xpath("//input[@id='pwd']")).sendKeys("Pass");
+        driver.findElement(By.xpath("//input[@id='usr']")).sendKeys(username);
+        driver.findElement(By.xpath("//input[@id='pwd']")).sendKeys(password);
+        driver.findElement(By.xpath("//input[@type='submit']")).click();
 
     }
 
@@ -36,4 +38,6 @@ public class LoginPage {
         Thread.sleep(5000);
         driver.close();
     }
+
+
 }
