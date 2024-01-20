@@ -1,27 +1,50 @@
 package pages;
 
-import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
-import static utils.BrowserSetup.driver;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class SignInPage {
 
-    private WebElement userNameField = driver.findElement(By.xpath("//input[@id='usr']"));
+    WebDriver driver;
 
-    private WebElement passwordField = driver.findElement(By.xpath("//input[@id='pwd']"));
+    @FindBy(xpath = "//input[@id='usr']")
+    private WebElement userNameField;
 
-    private WebElement loginButton = driver.findElement(By.xpath("//input[@type='submit']"));
+    @FindBy(xpath = "//input[@id='pwd']")
+    private WebElement passwordField;
+
+    @FindBy(xpath = "//input[@type='submit']")
+    private WebElement loginButton;
+
+    @FindBy(xpath = "//*[@id='ShoeType']")
+    private WebElement shoesElement;
+
+    public SignInPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
+    }
 
     public void setUserNameField(String name) {
         userNameField.sendKeys(name);
     }
+
     public void setPasswordFieldField(String pass) {
-        userNameField.sendKeys(pass);
+        passwordField.sendKeys(pass);
     }
 
     public void clickLogin() {
         loginButton.click();
     }
 
+    public void loginValidUser(String username, String password) {
+        userNameField.sendKeys(username);
+        passwordField.sendKeys(password);
+        loginButton.click();
+    }
+
+    public void assertShoesDisplayed() {
+        shoesElement.isDisplayed();
+    }
 }
