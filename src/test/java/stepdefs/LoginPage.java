@@ -27,6 +27,7 @@ public class LoginPage {
 //        WebDriverManager.chromedriver().setup();
 //        driver = new ChromeDriver();
         driver.get("https://anupdamoda.github.io/AceOnlineShoePortal/SignIn.html");
+        driver.manage().window().maximize();
         System.out.println("Site Launched");
 
     }
