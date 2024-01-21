@@ -1,5 +1,7 @@
 package stepdefs;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -13,10 +15,17 @@ public class LoginPage {
     public static WebDriver driver;
     SignInPage signIn;
 
-    @Given(":User navigates to login page.")
-    public void user_navigates_to_login_page() {
+    @Before
+    public void browserSetup() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
+        System.out.println("WebDriver Initialised!");
+    }
+
+    @Given(":User navigates to login page.")
+    public void user_navigates_to_login_page() {
+//        WebDriverManager.chromedriver().setup();
+//        driver = new ChromeDriver();
         driver.get("https://anupdamoda.github.io/AceOnlineShoePortal/SignIn.html");
         System.out.println("Site Launched");
 
@@ -41,6 +50,12 @@ public class LoginPage {
     public void user_should_be_navigate_to_home_page() throws InterruptedException {
         signIn.assertShoesDisplayed();
         Thread.sleep(3000);
-        driver.close();
+//        driver.close();
+    }
+
+    @After
+    public void closeWebDriver() {
+        driver.quit();
+        System.out.println("WebDriver Closed!");
     }
 }
