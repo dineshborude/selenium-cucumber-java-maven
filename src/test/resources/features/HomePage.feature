@@ -1,4 +1,4 @@
-@SmokeTest
+@HomePageTest
 Feature: User Login Functionality
 
   Scenario Outline: Validate user is able to login
