@@ -1,4 +1,4 @@
-@SmokeTest
+@HomePageTest
 Feature: User Login Functionality
 
   Scenario Outline: Validate user is able to login
@@ -12,4 +12,4 @@ Feature: User Login Functionality
       | user1    | pass1    |
       | user2    | pass2    |
       | user3    | pass3    |
-      | danny    | pass3    |
+

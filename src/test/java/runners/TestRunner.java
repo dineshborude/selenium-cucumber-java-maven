@@ -9,7 +9,8 @@ import io.cucumber.junit.CucumberOptions;
         features = "src/test/resources/features",
         glue = "stepdefs",
         plugin = {"pretty", "html:target/HtmlReports"},
-        tags = "@SmokeTest"
+        tags = "@HomePageTest"
 )
 public class TestRunner {
+	
 }
