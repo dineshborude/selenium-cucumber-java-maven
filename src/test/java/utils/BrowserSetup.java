@@ -14,7 +14,7 @@ public class BrowserSetup {
 
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-//        driver.get("https://anupdamoda.github.io/AceOnlineShoePortal/index.html");
+        driver.get("https://anupdamoda.github.io/AceOnlineShoePortal/index.html");
 
 
 
